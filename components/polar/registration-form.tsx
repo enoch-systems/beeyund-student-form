@@ -1,23 +1,20 @@
 "use client"
 
 import { useState } from "react"
-import { GraduationCapIcon } from "lucide-react"
 
 interface RegistrationFormProps {
   onSubmit?: (data: FormData) => void
 }
 
 interface FormData {
-  firstName: string
-  lastName: string
+  fullName: string
   phoneNumber: string
   email: string
 }
 
 export function RegistrationForm({ onSubmit }: RegistrationFormProps) {
   const [formData, setFormData] = useState<FormData>({
-    firstName: "",
-    lastName: "",
+    fullName: "",
     phoneNumber: "",
     email: "",
   })
@@ -32,14 +29,18 @@ export function RegistrationForm({ onSubmit }: RegistrationFormProps) {
   }
 
   return (
-    <div className="w-full max-w-xl rounded-2xl border border-white/20 bg-white/10 p-8 backdrop-blur-md">
+    <div className="w-full max-w-xl animate-[popIn_0.7s_ease-out_forwards] rounded-2xl border border-white/20 bg-white/10 p-8 backdrop-blur-md [transform-origin:center]">
       <div className="flex flex-col gap-6">
         {/* Header */}
         <div className="flex flex-col gap-3 items-center text-center">
           <div className="flex items-center justify-center">
-            <GraduationCapIcon className="h-12 w-12 text-sky-400" />
+            <img
+              src="https://res.cloudinary.com/deafv5ovi/image/upload/v1785750827/log_x2cgip.png"
+              alt="beeyund Labs logo"
+              className="h-12 w-12 object-contain"
+            />
           </div>
-          <h1 className="text-3xl font-bold text-white">beeyuund</h1>
+          <h1 className="text-3xl font-bold text-white"># beeyund Labs.</h1>
           <p className="text-lg text-white/80">Ready to start your journey?</p>
         </div>
 
@@ -90,40 +91,24 @@ export function RegistrationForm({ onSubmit }: RegistrationFormProps) {
 
         {/* Registration Form */}
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div className="flex flex-col gap-2">
-              <label htmlFor="firstName" className="text-sm text-white/80">
-                First Name
-              </label>
-              <input
-                id="firstName"
-                type="text"
-                value={formData.firstName}
-                onChange={handleChange("firstName")}
-                required
-                className="w-full border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-white/50 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-sky-400/50 rounded-lg"
-                placeholder="John"
-              />
-            </div>
-            <div className="flex flex-col gap-2">
-              <label htmlFor="lastName" className="text-sm text-white/80">
-                Last Name
-              </label>
-              <input
-                id="lastName"
-                type="text"
-                value={formData.lastName}
-                onChange={handleChange("lastName")}
-                required
-                className="w-full border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-white/50 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-sky-400/50 rounded-lg"
-                placeholder="Doe"
-              />
-            </div>
+          <div className="flex flex-col gap-2">
+            <label htmlFor="fullName" className="text-sm text-white/80">
+              Full Name
+            </label>
+            <input
+              id="fullName"
+              type="text"
+              value={formData.fullName}
+              onChange={handleChange("fullName")}
+              required
+              className="w-full border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-white/50 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-sky-400/50 rounded-lg"
+              placeholder="Enoch Chukwudi"
+            />
           </div>
 
           <div className="flex flex-col gap-2">
             <label htmlFor="phoneNumber" className="text-sm text-white/80">
-              Phone Number
+              WhatsApp Number
             </label>
             <input
               id="phoneNumber"
@@ -132,7 +117,7 @@ export function RegistrationForm({ onSubmit }: RegistrationFormProps) {
               onChange={handleChange("phoneNumber")}
               required
               className="w-full border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-white/50 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-sky-400/50 rounded-lg"
-              placeholder="+234 801 234 5678"
+              placeholder="+234 803 123 4567"
             />
           </div>
 
@@ -147,7 +132,7 @@ export function RegistrationForm({ onSubmit }: RegistrationFormProps) {
               onChange={handleChange("email")}
               required
               className="w-full border border-white/20 bg-white/10 px-4 py-3 text-white placeholder:text-white/50 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-sky-400/50 rounded-lg"
-              placeholder="john.doe@example.com"
+              placeholder="enochchukwudi@example.com"
             />
           </div>
 
