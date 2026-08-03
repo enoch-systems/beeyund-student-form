@@ -7,8 +7,8 @@ import "./globals.css"
 const plusJakartaSans = Plus_Jakarta_Sans({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Polar.ai - AI Powered Chatbot",
-  description: "Your intelligent AI assistant powered by Polar.ai",
+  title: "beeyuund - Full Stack Development Academy",
+  description: "Join beeyuund's 2-month full stack development cohort. Master React, Node.js, and build real-world projects. Start your journey today.",
   generator: "v0.app",
   icons: {
     icon: [
